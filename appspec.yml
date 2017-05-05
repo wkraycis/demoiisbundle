@@ -1,0 +1,16 @@
+version: 0.0
+os: windows
+files:
+  - source: \
+    destination: c:\inetpub\wwwroot
+
+hooks:
+  ApplicationStop:
+    - location: \scripts\hook-application-stop.ps1
+      timeout: 900
+  BeforeInstall:
+    - location: \scripts\hook-before-install.ps1
+      timeout: 900
+  ApplicationStart:
+    - location: \scripts\hook-application-start.ps1
+      timeout: 900
